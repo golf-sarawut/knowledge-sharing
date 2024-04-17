@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Bubbling Example</title>
+<style>
+  #grandparent { background-color: lightblue; padding: 20px; }
+  #parent { background-color: lightgreen; padding: 20px; }
+  #child { background-color: lightcoral; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div id="grandparent">
+  Grandparent
+  <div id="parent">
+    Parent
+    <div id="child">
+      Child
+    </div>
+  </div>
+</div>
+
+<script>
+  // Add event listeners to each element
+  document.getElementById('grandparent').addEventListener('click', function(event) {
+    alert('Grandparent clicked!');
+    console.log('Event target:', event.target);
+    console.log('Current target:', event.currentTarget);
+  });
+
+  document.getElementById('parent').addEventListener('click', function(event) {
+    alert('Parent clicked!');
+    console.log('Event target:', event.target);
+    console.log('Current target:', event.currentTarget);
+  });
+
+  document.getElementById('child').addEventListener('click', function(event) {
+    alert('Child clicked!');
+    console.log('Event target:', event.target);
+    console.log('Current target:', event.currentTarget);
+  });
+</script>
+
+</body>
+</html>
