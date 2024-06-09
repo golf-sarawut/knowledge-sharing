@@ -29,3 +29,19 @@ function handleResponse2<T>(response: ApiResponse<T>) {
     console.log("Error:", response.message);
   }
 }
+
+const successResponse: SuccessResponse<number> = {
+  status: "success",
+  data: 42,
+};
+
+const errorResponse: ErrorResponse = {
+  status: "error",
+  message: "Internal server error",
+};
+
+handleResponse(successResponse);
+handleResponse2(successResponse);
+
+handleResponse2(errorResponse);
+handleResponse2(errorResponse);
