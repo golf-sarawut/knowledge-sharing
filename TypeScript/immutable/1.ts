@@ -1,5 +1,3 @@
-type UserRole = 'admin' | 'user' | 'guest';
-
 const ROLES = {
     admin: 'admin',
     user: 'user',
@@ -12,6 +10,5 @@ const PERMISSIONS = {
     guest: ['read']
 };
 
-function getPermissions(role: UserRole): string[] {
-    return PERMISSIONS[role];
-};
+ROLES.guest = "admin"
+PERMISSIONS.guest = ['read', 'write', 'delete']
