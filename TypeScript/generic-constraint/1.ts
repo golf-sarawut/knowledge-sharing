@@ -9,3 +9,7 @@ console.log(getProperty(person, "age")); // Output: 30
 const car = { make: "Toyota", model: "Corolla" };
 console.log(getProperty(car, "make")); // Output: Toyota
 console.log(getProperty(car, "model")); // Output: Corolla
+
+// The following lines should cause typescript error
+console.log(getProperty(person, "model"));
+console.log(getProperty(car, "name"));
