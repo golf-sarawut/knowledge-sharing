@@ -6,6 +6,6 @@ function toggleParseInput(input: string | number): number | string {
 }
 
 // type of parsedNumber must be number and not string | number
-const parsedNumber = toggleParseInput('123.45');
+const parsedNumber: number = toggleParseInput('123.45');
 // type parsedString must be string and not string | number
-const parsedString = toggleParseInput(parsedNumber);
+const parsedString: string = toggleParseInput(parsedNumber);
