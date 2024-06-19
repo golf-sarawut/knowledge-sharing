@@ -1,11 +1,11 @@
-function parseInput(input: string): number;
-function parseInput(input: number): string;
-function parseInput(input: string | number): number | string {
+function toggleParseInput(input: string | number): number | string {
     if (typeof input === 'string') {
         return parseFloat(input);
     }
     return input.toString();
 }
 
-const parsedNumber = parseInput('123.45');
-const parsedString = parseInput(123.45);
+// type of parsedNumber must be number and not string | number
+const parsedNumber = toggleParseInput('123.45');
+// type parsedString must be string and not string | number
+const parsedString = toggleParseInput(parsedNumber);
